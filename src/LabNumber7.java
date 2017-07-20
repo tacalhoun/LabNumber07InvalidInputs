@@ -12,14 +12,20 @@ public class LabNumber7 {
 
         Scanner scan = new Scanner(System.in);
 
-        String[] classNames = {"Mo", "Tresa", "David"};
-        String[] highSchool = {"Mass", "TechTown", "Davison"};
-        String[] favColor = {"mauve", "taupe", "dark brown"};
+        String[] classNames = {"Mo", "Tresa", "David", "Marc", "Delwar", "Shay", "Tomas",
+                "Nicholas", "Jonathon", "Gagan", "Gabby", "Katie", "Tracey",
+                "Jeanette", "Kobe", "Trinity", "Savion", "Santana", "Allie", "Peter"};
+        String[] highSchool = {"Mass", "TechTown", "Davison", "Mumford", "Detroit", "Southern", "Technical",
+                "Northend", "Jonathong", "Great Lakes", "Gunther", "Katherine", "Trenchtown",
+                "Journey", "King", "Truth", "Southfield", "St. Mary", "AllStar", "Public"};
+        String[] favColor = {"mauve", "taupe", "dark brown", "maroon", "dark blue", "saffron", "tan",
+                "navajo white", "juniper", "green", "gray", "khaki", "tangerine",
+                "jasper", "key lime pie", "tangelo", "scarlet", "sea green", "apple", "pumpkin"};
 
         System.out.println("Welcome to TechHire 2017");
         do {
             try {
-                System.out.println("Please enter a student number to learn more (1-3): ");
+                System.out.println("Please enter a student number to learn more (1-20): ");
                 studentNumber = scan.nextInt();
                 scan.nextLine();
 
@@ -38,10 +44,14 @@ public class LabNumber7 {
 
             } catch (ArrayIndexOutOfBoundsException e) {
                 System.out.println("You did not enter a valid student number. ");
+            } catch (InputMismatchException ex) {
+                //   System.out.println("You did not enter a valid information. ");
+                   scan.nextLine();
+            } catch (IllegalArgumentException e) {
+                System.out.println("not valid. ");
+
             }
-
-        } while (answer.equalsIgnoreCase("y"));
-
-
+            while (answer.equalsIgnoreCase("y")) ;
+        }
     }
 }
